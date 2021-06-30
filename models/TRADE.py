@@ -6,7 +6,7 @@ from torch import optim
 import torch.nn.functional as F
 import random
 import numpy as np
-
+import ipdb
 # import matplotlib.pyplot as plt
 # import seaborn  as sns
 # import nltk
@@ -320,6 +320,7 @@ class EncoderRNN(nn.Module):
 
     def forward(self, input_seqs, input_lengths, hidden=None):
         # Note: we run this all at once (over multiple batches of multiple sequences)
+
         embedded = self.embedding(input_seqs)
         embedded = self.dropout_layer(embedded)
         hidden = self.get_state(input_seqs.size(1))

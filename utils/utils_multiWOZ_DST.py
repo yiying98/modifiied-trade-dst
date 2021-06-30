@@ -309,6 +309,7 @@ def read_langs(file_name, gating_dict, SLOTS, dataset, lang, mem_lang, sequicity
                     "turn_uttr":turn_uttr_strip, 
                     'generate_y':generate_y
                     }
+
                 data.append(data_detail)
                 
                 if max_resp_len < len(source_text.split()):
@@ -384,7 +385,8 @@ def prepare_data_seq(training, task="dst", sequicity=0, batch_size=100):
     file_test = 'data/test_dials.json'
     # Create saving folder
     if args['path']:
-        folder_name = args['path'].rsplit('/', 2)[0] + '/'
+        #folder_name = args['path'].rsplit('/', 2)[0] + '/'
+        folder_name='save/TRADE-multiwozdst/'
     else:
         folder_name = 'save/{}-'.format(args["decoder"])+args["addName"]+args['dataset']+str(args['task'])+'/'
     print("folder_name", folder_name)
